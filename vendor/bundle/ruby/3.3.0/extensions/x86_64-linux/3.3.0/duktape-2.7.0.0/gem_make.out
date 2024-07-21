@@ -1,0 +1,36 @@
+current directory: /home/jd/projects/gh-pages-jdstone-dev/hydejack/vendor/bundle/ruby/3.3.0/gems/duktape-2.7.0.0/ext/duktape
+/home/jd/.rbenv/versions/3.3.3/bin/ruby extconf.rb
+checking for rb_sym2str()... yes
+creating Makefile
+
+current directory: /home/jd/projects/gh-pages-jdstone-dev/hydejack/vendor/bundle/ruby/3.3.0/gems/duktape-2.7.0.0/ext/duktape
+make DESTDIR\= sitearchdir\=./.gem.20240708-1525919-pphusa sitelibdir\=./.gem.20240708-1525919-pphusa clean
+
+current directory: /home/jd/projects/gh-pages-jdstone-dev/hydejack/vendor/bundle/ruby/3.3.0/gems/duktape-2.7.0.0/ext/duktape
+make DESTDIR\= sitearchdir\=./.gem.20240708-1525919-pphusa sitelibdir\=./.gem.20240708-1525919-pphusa
+compiling duktape.c
+duk_error_macros.c: In function ‘duk_err_handle_error_fmt’:
+duk_error_macros.c:19:2: warning: function ‘duk_err_handle_error_fmt’ might be a candidate for ‘gnu_printf’ format attribute [-Wsuggest-attribute=format]
+duk_api_stack.c: In function ‘duk__try_push_vsprintf’:
+duk_api_stack.c:4727:2: warning: function ‘duk__try_push_vsprintf’ might be a candidate for ‘gnu_printf’ format attribute [-Wsuggest-attribute=format]
+duk_util_tinyrandom.c: At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+compiling duktape_ext.c
+duktape_ext.c: In function ‘Init_duktape_ext’:
+duktape_ext.c:687:6: warning: old-style function definition [-Wold-style-definition]
+  687 | void Init_duktape_ext()
+      |      ^~~~~~~~~~~~~~~~
+duktape_ext.c: At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+linking shared-object duktape_ext.so
+
+current directory: /home/jd/projects/gh-pages-jdstone-dev/hydejack/vendor/bundle/ruby/3.3.0/gems/duktape-2.7.0.0/ext/duktape
+make DESTDIR\= sitearchdir\=./.gem.20240708-1525919-pphusa sitelibdir\=./.gem.20240708-1525919-pphusa install
+/usr/bin/install -c -m 0755 duktape_ext.so ./.gem.20240708-1525919-pphusa
+
+current directory: /home/jd/projects/gh-pages-jdstone-dev/hydejack/vendor/bundle/ruby/3.3.0/gems/duktape-2.7.0.0/ext/duktape
+make DESTDIR\= sitearchdir\=./.gem.20240708-1525919-pphusa sitelibdir\=./.gem.20240708-1525919-pphusa clean
