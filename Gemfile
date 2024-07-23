@@ -54,5 +54,7 @@ gem 'wdm' if Gem.win_platform?
 gem "tzinfo-data" if Gem.win_platform?
 
 # JDs Gems
-  gem "csv"
-  gem "base64"
+gem "csv"
+gem "base64"
+gem "rexml", "~> 3.3.2"
+
