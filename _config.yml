@@ -20,7 +20,7 @@
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Welcome
+title:                 JD's Blog
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -82,8 +82,8 @@ paginate_path:         /:num/
 # ---------------------------------------------------------------------------------------
 
 # For local build, uncomment 'theme' and comment 'remote_theme'.
-#theme: jekyll-theme-hydejack
-remote_theme: hydecorp/hydejack@v9
+theme: jekyll-theme-hydejack
+#remote_theme: hydecorp/hydejack@v9
 
 
 # Customization
@@ -291,19 +291,15 @@ hydejack:
 # Collections
 # ----------------------------------------------------------------------------------------
 
-# collections:
-  # example:
-  
-  #   output:            true
+collections:
+  projects:
+    permalink:         /projects/:path/
+    output:            true
 
-  # featured_tags:
-  #   permalink:         /tag-:name/
-  #   output:            true
-
-  # projects:
-  #   permalink:         /projects/:path/
-  #   output:            true
-
+  staff_members:
+    permalink:         /staff_members/:path/
+    output:             true
+    people:             true
 
 # File inclusion/exclusion
 # ----------------------------------------------------------------------------------------
