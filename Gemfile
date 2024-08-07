@@ -44,6 +44,7 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-titles-from-headings"
   gem "jekyll-include-cache"
+  gem 'jemoji' #JD added
 
   # Non-Github Pages plugins:
   gem "jekyll-last-modified-at"
@@ -57,4 +58,3 @@ gem "tzinfo-data" if Gem.win_platform?
 gem "csv"
 gem "base64"
 gem "rexml", "~> 3.3.2"
-
