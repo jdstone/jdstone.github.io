@@ -30,7 +30,7 @@ gem "kramdown-math-katex"
 gem "duktape"
 
 # Fixes `jekyll serve` in ruby 3
-gem "webrick"
+gem "webrick", ">= 1.8.2"
 
 group :jekyll_plugins do
   gem "jekyll-default-layout"
@@ -58,3 +58,6 @@ gem "tzinfo-data" if Gem.win_platform?
 gem "csv"
 gem "base64"
 gem "rexml", "~> 3.3.2"
+# added for security vulnerability
+gem "google-protobuf", ">= 4.27.5"
+
