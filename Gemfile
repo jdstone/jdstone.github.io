@@ -57,7 +57,7 @@ gem "tzinfo-data" if Gem.win_platform?
 # JDs Gems
 gem "csv"
 gem "base64"
-gem "rexml", "~> 3.3.2"
+gem "rexml", ">= 3.3.6"
 # added for security vulnerability
 gem "google-protobuf", ">= 4.27.5"
 
