@@ -132,47 +132,47 @@ A container runtime lets each node run Pods, so installing one is required. Ther
 
 1. Set up Docker's apt repository
 
-    ~~~shell
-    # Add Docker's official GPG key:
-    sudo apt-get update
-    sudo apt-get install ca-certificates curl
-    sudo install -m 0755 -d /etc/apt/keyrings
-    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-    sudo chmod a+r /etc/apt/keyrings/docker.asc
+   ~~~shell
+   # Add Docker's official GPG key:
+   sudo apt-get update
+   sudo apt-get install ca-certificates curl
+   sudo install -m 0755 -d /etc/apt/keyrings
+   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-    # Add the repository to Apt sources:
-    echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt-get update
+   # Add the repository to Apt sources:
+   echo \
+     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   sudo apt-get update
     ~~~
 
 2. Install the latest version of `containerd`
 
-    ~~~shell
-    sudo apt-get install containerd.io
-    ~~~
+   ~~~shell
+   sudo apt-get install containerd.io
+   ~~~
 
 3. Configure containerd
 
     This sets the default configuration for containerd.
 
-    ~~~shell
-    sudo mkdir -p /etc/containerd
-    sudo containerd config default | sudo tee /etc/containerd/config.toml
-    ~~~
+   ~~~shell
+   sudo mkdir -p /etc/containerd
+   sudo containerd config default | sudo tee /etc/containerd/config.toml
+   ~~~
 
 4. Update configuration
 
     Update the `/etc/containerd/config.toml` file to reflect these changes.
 
-    ~~~shell
-    [plugins."io.containerd.grpc.v1.cri".containerd]
-      snapshotter = "overlayfs"
-    [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
-      SystemdCgroup = true
-    ~~~
+   ~~~shell
+   [plugins."io.containerd.grpc.v1.cri".containerd]
+     snapshotter = "overlayfs"
+   [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+     SystemdCgroup = true
+   ~~~
 
     > :information_source: **Note:**<br>
     > Confirm CRI support is enabled.<br>
@@ -180,10 +180,10 @@ A container runtime lets each node run Pods, so installing one is required. Ther
 
 5. Restart containerd to apply changes and enable service start on system start-up
 
-    ~~~shell
-    sudo systemctl restart containerd
-    sudo systemctl enable containerd
-    ~~~
+   ~~~shell
+   sudo systemctl restart containerd
+   sudo systemctl enable containerd
+   ~~~
 
 
 ### Install Kubeadm, Kubectl, and Kubelet
@@ -192,37 +192,37 @@ Install Kubernetes v1.30.
 
 1. Update the `apt` package index and install required packages to use the Kubernetes `apt` repository
 
-    ~~~shell
-    sudo apt-get update
-    sudo apt-get install -y ca-certificates curl gpg
-    ~~~
+   ~~~shell
+   sudo apt-get update
+   sudo apt-get install -y ca-certificates curl gpg
+   ~~~
 
 2. Download the public signing key for the Kubernetes package repositories
 
-    ~~~shell
-    # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
-    # sudo mkdir -p -m 755 /etc/apt/keyrings
-    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-    ~~~
+   ~~~shell
+   # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+   # sudo mkdir -p -m 755 /etc/apt/keyrings
+   curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+   ~~~
 
 3. Add the appropriate Kubernetes apt repository
 
-    ~~~shell
-    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
-    ~~~
+   ~~~shell
+   echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+   ~~~
 
 4. Update the `apt` package index and install the packages
 
-    ~~~shell
-    sudo apt-get update
-    sudo apt-get install -y kubelet kubeadm kubectl
-    ~~~
+   ~~~shell
+   sudo apt-get update
+   sudo apt-get install -y kubelet kubeadm kubectl
+   ~~~
 
 5. Pin the package versions so they aren't updated automatically
 
-    ~~~shell
-    sudo apt-mark hold kubelet kubeadm kubectl
-    ~~~
+   ~~~shell
+   sudo apt-mark hold kubelet kubeadm kubectl
+   ~~~
 
 
 ### Validate containerd status
@@ -329,15 +329,15 @@ I decided to go with Canal, which provides a middle ground and gives you Calico 
 
 1. Download the Canal networking manifest
 
-    ~~~shell
-    curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/canal.yaml -O
-    ~~~
+   ~~~shell
+   curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/canal.yaml -O
+   ~~~
 
 2. Install Canal (Flannel & Calico)
 
-    ~~~shell
-    kubectl apply -f canal.yaml
-    ~~~
+   ~~~shell
+   kubectl apply -f canal.yaml
+   ~~~
 
 ## Final steps
 
