@@ -8,9 +8,9 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.1"
+gem "jekyll", "~> 4.3"
 
-gem "jekyll-theme-hydejack", "~> 9.1"
+gem "jekyll-theme-hydejack", "~> 9.2"
 
 # IMPORTANT: The followign gem is used to compile math formulas to 
 # KaTeX during site building.
@@ -26,11 +26,14 @@ gem "jekyll-theme-hydejack", "~> 9.1"
 # If you're using the MathJax math engine instead, free to remove the line below:
 gem "kramdown-math-katex"
 
-# A JavaScript runtime for ruby that helps with running the katex gem above.
+# A JavaScript runtime for Ruby that helps with running the katex gem above.
 gem "duktape"
 
-# Fixes `jekyll serve` in ruby 3
+# Required for `jekyll serve` in Ruby 3
 gem "webrick", ">= 1.8.2"
+
+# Uncomment when using the `--lsi` option for `jekyll build`
+# gem "classifier-reborn"
 
 group :jekyll_plugins do
   gem "jekyll-default-layout"
