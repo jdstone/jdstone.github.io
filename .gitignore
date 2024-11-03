@@ -48,3 +48,6 @@ _zip
 
 /assets/js/*hydejack-*
 /_sass/*/__*__/*
+
+# Miscellaneous
+run.sh
