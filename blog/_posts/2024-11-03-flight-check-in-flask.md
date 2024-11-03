@@ -5,8 +5,6 @@ sitemap: false
 hide_last_modified: true
 ---
 
-# I converted my PHP Flight Check-in app to Python!
-
 About 4 years ago, I wrote an app in PHP that could automatically check you in to your Southwest Airlines flight. It ran really well for about a year, maybe a little more, until Southwest figured out that I, or someone, was using their public API to check myself and friends in to our flights automatically. I've written a lengthy README over in the [original repo](https://github.com/jdstone/flight-check-in) (this is before I had my blog here) that explains thoroughly how the application works and all the nitty gritty details of it.
 
 # Reasoning behind re-writing in Python
