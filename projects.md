@@ -12,7 +12,7 @@ description: >
   Contains various projects I've completed.
 hide_description: true
 ---
-Coming soon...
+For some of my projects, please see my [blog](/blog).
 
 {% for projects in site.projects %}
   <h2>
