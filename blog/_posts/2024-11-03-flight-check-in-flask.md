@@ -23,6 +23,6 @@ I had so much fun with this, I just kept trying to find things to improve in the
 
 # Links
 
-* Automatic Flight Check-in (PHP): https://github.com/jdstone/flight-check-in
-* Automatic Flight Check-in (Python/Flask): https://github.com/jdstone/flight-check-in-flask
-* Test Suite: https://github.com/jdstone/flight-check-in-test-suite
+* Automatic Flight Check-in (PHP): [https://github.com/jdstone/flight-check-in](https://github.com/jdstone/flight-check-in)
+* Automatic Flight Check-in (Python/Flask): [https://github.com/jdstone/flight-check-in-flask](https://github.com/jdstone/flight-check-in-flask)
+* Test Suite: [https://github.com/jdstone/flight-check-in-test-suite](https://github.com/jdstone/flight-check-in-test-suite)
