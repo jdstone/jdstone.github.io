@@ -12,7 +12,7 @@ gem "jekyll", "~> 4.3"
 
 gem "jekyll-theme-hydejack", "~> 9.2"
 
-# IMPORTANT: The followign gem is used to compile math formulas to 
+# IMPORTANT: The following gem is used to compile math formulas to 
 # KaTeX during site building.
 #
 # There are a couple of things to know about this gem:
