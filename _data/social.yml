@@ -263,7 +263,7 @@ mastodon:
   icon: icon-mastodon
 dockerhub:
   name: Dockerhub
-  icon: icon-github
+  icon: icon-link
 artifacthub:
   name: Artifacthub
-  icon: icon-github
+  icon: icon-link
