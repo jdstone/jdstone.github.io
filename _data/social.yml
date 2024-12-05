@@ -261,3 +261,9 @@ discord:
 mastodon:
   name: Mastodon
   icon: icon-mastodon
+dockerhub:
+  name: Dockerhub
+  icon: icon-link
+artifacthub:
+  name: Artifacthub
+  icon: icon-link
