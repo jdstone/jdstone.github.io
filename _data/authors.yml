@@ -76,6 +76,8 @@ author1:
     # discord:         <invite-code>
     # mastodon:        https://<url>
     # x:               <username>
+    dockerhub:         https://hub.docker.com/u/jdstone
+    artifacthub:       https://artifacthub.io/packages/search?repo=jdstone
 
 # Another author (optional)
 # author2:
