@@ -98,9 +98,9 @@ sudo apt-cache madison kubeadm
 
 ### Drain the node
 
-   ```bash
-   kubectl drain k8s-master --ignore-daemonsets
-   ```
+```bash
+kubectl drain k8s-master --ignore-daemonsets
+```
 
 
 ### Upgrade kubelet and kubectl
@@ -163,10 +163,10 @@ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --
 
 ### Drain the node
 
-   ```bash
-   # execute this command on a control plane node
-   kubectl drain k8s-node1 --ignore-daemonsets
-   ```
+```bash
+# execute this command on a control plane node
+kubectl drain k8s-node1 --ignore-daemonsets
+```
 
 
 ### Upgrade kubelet and kubectl
