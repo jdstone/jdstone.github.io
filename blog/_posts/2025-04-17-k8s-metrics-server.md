@@ -9,7 +9,7 @@ Want to be able to easily see what Kubernetes pod has the highest CPU load (amon
 
 
 1. `kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml`
-2. Edit the metrics-server deployment to disable TLS certificate validation. Otherwise, the Metrics Server pod won't start. Add `--kubelet-insecure-tls` to the args of the metrics-server container. `kubectl edit deploy metrics-server`
+2. Edit the metrics-server deployment to disable TLS certificate validation. Otherwise, the Metrics Server pod won't start. Add `--kubelet-insecure-tls` to the args of the metrics-server container. `kubectl edit -n kube-system deploy metrics-server`
 
 
 ```
