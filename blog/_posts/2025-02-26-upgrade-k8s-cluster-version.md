@@ -37,13 +37,21 @@ First, we've got to download and install the newest public signing key for the K
 curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 ```
 
+Then, we've got to add the apt repository so the packages can be upgraded. Kubernetes has individual repositories for each minor release of Kubernetes, rather than a single repository for all versions[^1]. This needs to be run on each node, both the control plane and the two worker nodes.
 
-### Find which version of package to upgrade to
+```bash
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+```
+
+
+### Update the Apt repositories and find which version of package to upgrade to
+```bash
+sudo apt update
+```
 
 ```bash
 # Find the latest 1.30 version in the list.
 # It should look like 1.30.x-*, where x is the latest patch.
-sudo apt update
 sudo apt-cache madison kubeadm
 ```
 
@@ -116,7 +124,7 @@ kubectl drain k8s-master --ignore-daemonsets
 2. Restart the kubelet:
 
    ```bash
-   sudo systemctl daemon-reload
+   sudo systemctl daemon-reload && \
    sudo systemctl restart kubelet
    ```
 
@@ -143,6 +151,11 @@ First, we've got to download and install the newest public signing key for the K
 curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 ```
 
+Then, we've got to add the apt repository so the packages can be upgraded. Kubernetes has individual repositories for each minor release of Kubernetes, rather than a single repository for all versions[^1]. This needs to be run on each node, both the control plane and the two worker nodes.
+
+```bash
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+```
 
 ### Upgrade worker nodes
 
@@ -182,7 +195,7 @@ kubectl drain k8s-node1 --ignore-daemonsets
 2. Restart the kubelet:
 
    ```bash
-   sudo systemctl daemon-reload
+   sudo systemctl daemon-reload && \
    sudo systemctl restart kubelet
    ```
 
@@ -201,16 +214,7 @@ kubectl uncordon k8s-node1
 
 We'll repeat this process for the remaining node(s). In my case, `k8s-node2`.
 
-Next is to upgrade from version 1.30.10 to version 1.31.6. We'll follow the same steps as we previously did, but first we'll run this extra step on each node.
-
-
-## Update the package repository
-
-We've got to add the apt repository so the packages can be upgraded. Kubernetes has individual repositories for each minor release of Kubernetes, rather than a single repository for all versions[^1]. This needs to be run on each node, both the control plane and the two worker nodes.
-
-```bash
-echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-```
+Next is to upgrade from version 1.30.10 to version 1.31.6. We'll follow the same steps as we previously did.
 
 
 [^1]: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#k8s-install-0
